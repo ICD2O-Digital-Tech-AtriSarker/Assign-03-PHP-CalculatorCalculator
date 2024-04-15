@@ -1,3 +1,5 @@
+<!-- CSS -->
+<link rel="stylesheet" href="./css/iframe.css">
 <?php
   if(isset($_POST['submit'])) 
   {
