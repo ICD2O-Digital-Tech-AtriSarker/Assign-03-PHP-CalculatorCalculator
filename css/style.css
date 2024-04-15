@@ -1,0 +1,36 @@
+/*
+* Created by: Atri Sarker
+* Created on: April, 2024
+* Description: This file contains the style.css for the Calculator Calculator, a widget that takes in integer input, n and calculates the html code for the calculator of a regular n-sided polygon.
+*/
+
+#outputResult {
+  border: 4px solid;
+  background: #ead6bb;
+  display: inline-block;
+  padding: 16px;
+}
+
+body {
+  background: #80ffff;
+  font-family: 'Oswald', sans-serif;
+  color: #0080c0;
+  padding-bottom: 40px;
+}
+
+h1 img {
+  width: 144px;
+  height: 48px;
+}
+
+#mainCanvas {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  width: 100vw;
+  height: 200vh;
+  border: none;
+  background-color: #80ffb3;
+}
