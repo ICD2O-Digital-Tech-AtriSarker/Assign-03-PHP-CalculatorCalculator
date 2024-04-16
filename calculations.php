@@ -1,5 +1,10 @@
 <!-- CSS -->
 <link rel="stylesheet" href="./css/iframe.css">
+<!-- MDL -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
 <?php
   if(isset($_POST['submit'])) 
   {
@@ -122,9 +127,17 @@
 
     $htmlCode = str_replace("|n|", "$n", $fstring);
     echo $htmlCode ;
-
+    
     $copyCommand = "navigator.clipboard.writeText(`" . str_replace('"', "'", $htmlCode) . "`)";
-    echo '<button
+    echo '<div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>'
+    // COPY HTML BUTTON
+    echo '<button 
+          class="mdl-button 
+                mdl-js-button mdl-button--raised 
+                mdl-js-ripple-effect mdl-button--colored"
           onclick = "'. $copyCommand . '"
           >
           Copy HTML!

@@ -13,9 +13,8 @@
 
 body {
   background: #80ffff;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #0080c0;
-  padding-bottom: 40px;
 }
 
 h1 img {
@@ -32,5 +31,5 @@ iframe {
   width: 100vw;
   height: 200vh;
   border: none;
-  background-color: #80ffb3;
+  background-color: #80ff99;
 }
