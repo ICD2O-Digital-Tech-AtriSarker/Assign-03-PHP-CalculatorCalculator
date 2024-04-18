@@ -4,12 +4,6 @@
 * Description: This file contains the style.css for the index.php of the Calculator Calculator, a widget that takes in integer input, n and calculates the html code for the calculator of a regular n-sided polygon.
 */
 
-#outputResult {
-  border: 4px solid;
-  background: #ead6bb;
-  display: inline-block;
-}
-
 body {
   background: #b8f1ff;
   font-family: "Oswald", sans-serif;
@@ -19,11 +13,6 @@ body {
 h1 img {
   width: 144px;
   height: 48px;
-}
-
-#mainCanvas {
-  width: 100%;
-  height: auto;
 }
 
 iframe {
