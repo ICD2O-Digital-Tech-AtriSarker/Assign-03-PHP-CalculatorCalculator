@@ -1,18 +1,17 @@
 /*
 * Created by: Atri Sarker
 * Created on: April, 2024
-* Description: This file contains the style.css for the Calculator Calculator, a widget that takes in integer input, n and calculates the html code for the calculator of a regular n-sided polygon.
+* Description: This file contains the style.css for the index.php of the Calculator Calculator, a widget that takes in integer input, n and calculates the html code for the calculator of a regular n-sided polygon.
 */
 
 #outputResult {
   border: 4px solid;
   background: #ead6bb;
   display: inline-block;
-  padding: 16px;
 }
 
 body {
-  background: #80ffff;
+  background: #b8f1ff;
   font-family: "Oswald", sans-serif;
   color: #0080c0;
 }
@@ -29,7 +28,7 @@ h1 img {
 
 iframe {
   width: 100vw;
-  height: 200vh;
+  height: 580px;
   border: none;
-  background-color: #80ff99;
+  background-color: rgba(0,0,0,0);
 }

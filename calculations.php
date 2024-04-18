@@ -1,3 +1,8 @@
+<!--
+  * Created by: Atri Sarker
+  * Created on: April, 2024
+  * Description: This file contains the calculations.php for the Calculator Calculator, a widget that takes in integer input, n and calculates the html code for the calculator of a regular n-sided polygon.
+-->
 <!-- CSS -->
 <link rel="stylesheet" href="./css/iframe.css">
 <!-- MDL -->
@@ -10,6 +15,8 @@
   {
     // Get amount of sides, n
     $n = intval($_POST['sidesInput']);
+    // Get Unit Type
+    $unitType = $_POST['unitTypeInput'];
 
     // I used the JS calculator calculator [copy HTMl] feature to make this
     // Fstring with |n| in place of $n, and |unit| in place of $unitType
@@ -20,7 +27,7 @@
       <table>
         <tr>
           <td>
-            <label for="sideLengthInput">Enter side length (cm): </label>
+            <label for="sideLengthInput">Enter side length (|unit|): </label>
             <input type="number" step="0.001" min="0" id="sideLengthInput" name="sideLengthInput">
           </td>
           <td>
@@ -68,8 +75,8 @@
           }
   
           // Display Result
-          areaResult.innerHTML = "" + area + "cm<sup>2</sup>";
-          periResult.innerHTML = "" + peri + "cm";
+          areaResult.innerHTML = "" + area + "|unit|<sup>2</sup>";
+          periResult.innerHTML = "" + peri + "|unit|";
           return;
         }
   
@@ -126,19 +133,24 @@
       ';
 
     $htmlCode = str_replace("|n|", "$n", $fstring);
+    $htmlCode = str_replace("|unit|", "$unitType", $htmlCode);
     echo $htmlCode ;
     
     $copyCommand = "navigator.clipboard.writeText(`" . str_replace('"', "'", $htmlCode) . "`)";
     echo '<div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
-  <div class="mdl-snackbar__text"></div>
-  <button class="mdl-snackbar__action" type="button"></button>
-</div>'
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+          </div>';
+    $snackbarCommand = '
+      ;document.getElementById(`snackbar`).MaterialSnackbar.showSnackbar({message: `Copied!`,
+      timeout: 500,});
+    ';
     // COPY HTML BUTTON
-    echo '<button 
+    echo '<br><button 
           class="mdl-button 
                 mdl-js-button mdl-button--raised 
                 mdl-js-ripple-effect mdl-button--colored"
-          onclick = "'. $copyCommand . '"
+          onclick = "'. $copyCommand . $snackbarCommand .'"
           >
           Copy HTML!
           </button>';
